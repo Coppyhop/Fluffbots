@@ -2,6 +2,7 @@ package com.funsize.ffield.bots;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Properties;
 
 import net.dv8tion.jda.JDA;
@@ -21,11 +22,17 @@ public class Main {
         {
 			
 			Properties prop = new Properties();
- 
-			prop.load(new FileInputStream(new  File(Main.class.
-					getClassLoader().
-					getResource("config.properties").
-					toString())));
+			
+			
+			File harold = new  File("config.properties");
+			
+			File ssss = new File(harold.getAbsolutePath().trim());
+			
+			System.out.println(ssss.getAbsolutePath());
+			
+			InputStream bob = new FileInputStream(ssss);
+			
+			prop.load(bob);
  
 			token1 = prop.getProperty("token1");
 			token2 = prop.getProperty("token2");
