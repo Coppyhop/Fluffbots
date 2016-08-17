@@ -18,9 +18,7 @@ public class TobyAdapter  extends ListenerAdapter{
 	
     public void onMessageReceived(MessageReceivedEvent event)
     {
-    	
-		System.out.print("[INFO] Toby message recieved!");
-		
+    		
     	MessageChannel channel = event.getChannel();
     	Message message = event.getMessage();
     	String id = event.getAuthor().getId();
