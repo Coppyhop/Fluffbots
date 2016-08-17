@@ -24,26 +24,24 @@ public class Main {
 			Properties prop = new Properties();
 			
 			
-			File harold = new  File("config.properties");
+			File file1 = new  File("config.properties");
 			
-			File ssss = new File(harold.getAbsolutePath().trim());
+			File file2 = new File(file1.getAbsolutePath().trim());
 			
-			System.out.println(ssss.getAbsolutePath());
+			System.out.println(file2.getAbsolutePath());
 			
-			InputStream bob = new FileInputStream(ssss);
+			InputStream stream = new FileInputStream(file2);
 			
-			prop.load(bob);
+			prop.load(stream);
  
 			token1 = prop.getProperty("token1");
 			token2 = prop.getProperty("token2");
 			
 			toby = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token1).buildBlocking();
 			toby.getAccountManager().setGame(ts);
-			toby.getAccountManager().setNickname(toby.getGuildById("182574336039845889"), "Toby");
 			toby.addEventListener(new TobyAdapter());
 
 			zira = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token2).buildBlocking();
-        	zira.getAccountManager().setNickname(zira.getGuildById("182574336039845889"), "Zira");
         	zira.getAccountManager().setGame(zs);
         	zira.addEventListener(new ZiraAdapter());
 
