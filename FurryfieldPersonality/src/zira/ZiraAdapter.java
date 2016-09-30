@@ -1,4 +1,4 @@
-package com.funsize.ffield.bots;
+package zira;
 
 import net.dv8tion.jda.entities.MessageChannel;
 import net.dv8tion.jda.hooks.ListenerAdapter;

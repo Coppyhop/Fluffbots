@@ -2,9 +2,10 @@ package toby;
 
 import java.util.Random;
 
+import fluffbots.Core;
 import net.dv8tion.jda.entities.MessageChannel;
 
-public class AiCore {
+public class AiCore extends Core{
 
 	Random r = new Random();
   MessageChannel curChannel;
