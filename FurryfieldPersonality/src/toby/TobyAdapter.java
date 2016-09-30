@@ -8,10 +8,12 @@ import net.dv8tion.jda.hooks.ListenerAdapter;
 public class TobyAdapter  extends ListenerAdapter{
 
 	AiCore core;
+	FuckwadMusicCore mcore;
 	
 	public TobyAdapter(){
 		
 		core = new AiCore();
+		mcore = new FuckwadMusicCore();
 		
 	}
 	

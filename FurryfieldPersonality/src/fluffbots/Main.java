@@ -12,10 +12,10 @@ import zira.ZiraAdapter;
 
 public class Main {
 
-	static JDA toby, zira;
-	static String ts = "Toby v3.0.0", zs = "Zira v0.0.1";
+	static JDA toby;//, zira;
+	static String ts = "Toby v3.0.0";//, zs = "Zira v0.0.1";
 	
-	static String token1, token2;
+	static String token1;//, token2;
 	
 	public static void main(String[] args) {
 		
@@ -37,15 +37,17 @@ public class Main {
 			prop.load(stream);
  
 			token1 = prop.getProperty("token1");
-			token2 = prop.getProperty("token2");
+			//token2 = prop.getProperty("token2");
 			
 			toby = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token1).buildBlocking();
 			toby.getAccountManager().setGame(ts);
 			toby.addEventListener(new TobyAdapter());
 
+			/*
 			zira = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token2).buildBlocking();
         	zira.getAccountManager().setGame(zs);
         	zira.addEventListener(new ZiraAdapter());
+        	*/
 
         }
 		
