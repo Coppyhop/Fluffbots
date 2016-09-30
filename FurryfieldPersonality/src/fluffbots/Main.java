@@ -1,4 +1,4 @@
-package com.funsize.ffield.bots;
+package fluffbots;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,6 +7,8 @@ import java.util.Properties;
 
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
+import toby.TobyAdapter;
+import zira.ZiraAdapter;
 
 public class Main {
 
