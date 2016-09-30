@@ -41,7 +41,7 @@ public class Main {
 			
 			toby = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token1).buildBlocking();
 			toby.getAccountManager().setGame(ts);
-			toby.addEventListener(new TobyAdapter());
+			toby.addEventListener(new TobyAdapter(toby));
 
 			/*
 			zira = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token2).buildBlocking();

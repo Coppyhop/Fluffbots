@@ -1,5 +1,6 @@
 package toby;
 
+import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.entities.Message;
 import net.dv8tion.jda.entities.MessageChannel;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
@@ -10,10 +11,10 @@ public class TobyAdapter  extends ListenerAdapter{
 	AiCore core;
 	FuckwadMusicCore mcore;
 	
-	public TobyAdapter(){
+	public TobyAdapter(JDA toby){
 		
 		core = new AiCore();
-		mcore = new FuckwadMusicCore();
+		mcore = new FuckwadMusicCore(toby);
 		
 	}
 	
@@ -25,6 +26,7 @@ public class TobyAdapter  extends ListenerAdapter{
     	String id = event.getAuthor().getId();
     	
     	core.processMessage(channel, message.getContent(), id);
+    	mcore.processMessage(channel, message.getContent(), id);
  
     	if (message.getContent().startsWith("!")) message.deleteMessage();
     	 
