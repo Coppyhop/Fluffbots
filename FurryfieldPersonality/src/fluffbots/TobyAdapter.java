@@ -11,13 +11,26 @@ public class TobyAdapter  extends ListenerAdapter{
 	List<Core> cores = new ArrayList<Core>();	
 		
     public void onMessageReceived(MessageReceivedEvent event)
-    {
-    		    	
+    {    		    	
+    	
     	for(Core core:cores){
     		
     		core.processMessage(event);
     	
     	}    	
+    	
+    	
+    	if(event.getMessage().getContent().equals("t!debug@cores")){
+    		
+    		String clist = "";
+    		
+    		for(Core name:cores){
+    			clist = clist + ", " + name.toName();
+    		}
+    		
+    		event.getChannel().sendMessage("Currently loaded cores: " + clist);
+    		
+    	}
     	 
     }	
     

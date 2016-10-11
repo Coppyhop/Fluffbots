@@ -6,4 +6,5 @@ public abstract class Core {
 
 	public abstract void processMessage(MessageReceivedEvent event);
 	
+	public abstract String toName();
 }
