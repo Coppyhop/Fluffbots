@@ -7,15 +7,15 @@ import java.util.Properties;
 
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
-import toby.TobyAdapter;
-import zira.ZiraAdapter;
 
 public class Main {
 
-	static JDA toby;//, zira;
-	static String ts = "Toby v3.0.0";//, zs = "Zira v0.0.1";
+	static JDA toby;
 	
-	static String token1;//, token2;
+	static String ts;
+	static String token;
+	
+	static TobyAdapter adapter;
 	
 	public static void main(String[] args) {
 		
@@ -25,9 +25,7 @@ public class Main {
 			
 			Properties prop = new Properties();
 			
-			
 			File file1 = new  File("config.properties");
-			
 			File file2 = new File(file1.getAbsolutePath().trim());
 			
 			System.out.println(file2.getAbsolutePath());
@@ -36,18 +34,16 @@ public class Main {
 			
 			prop.load(stream);
  
-			token1 = prop.getProperty("token1");
-			//token2 = prop.getProperty("token2");
+			token = prop.getProperty("token");
+			ts = prop.getProperty("version");
 			
-			toby = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token1).buildBlocking();
+			toby = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token).buildBlocking();
 			toby.getAccountManager().setGame(ts);
-			toby.addEventListener(new TobyAdapter(toby));
-
-			/*
-			zira = new JDABuilder().setBulkDeleteSplittingEnabled(false).setBotToken(token2).buildBlocking();
-        	zira.getAccountManager().setGame(zs);
-        	zira.addEventListener(new ZiraAdapter());
-        	*/
+			
+			adapter = new TobyAdapter();
+			adapter.addCore(new TestCore());
+			
+			toby.addEventListener(adapter);
 
         }
 		
@@ -59,6 +55,4 @@ public class Main {
 
 	}
 	
-	
-
 }
