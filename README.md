@@ -1,12 +1,13 @@
 # Fluffbots
 
-A project with the goal of creating discord bots that have personalities, 
-and act human.
+A completly modular bot System for discord. This allows users to create and share modules, and let otherwise inexperienced people create their own bot for discord.
 
-Setting up:
+# Setting up
 
-Currently the program requires 2 bot tokens, In the next release you'll be able to choose if the second bot is enabled.
-Token 1 is the main bot, and Token 2 is the "Bartender" the second bot is geared more towards Role-playing.
+Using eclipse, import a new git project using this git. Then download the JDA release (with dependencies) and add it to the classpath. Export a runnable jar file using main ad the class. In the same directory, make 2 files and a folder. Modules.txt, config.properties, and the folder is named "modules". In the config add a line "token=" and paste in your bot token. Then add a line "version=" and type what you want your bot playing. Save and exit. Add any modules you want into the modules folder and append their class names to modules.txt. Double click on the jar and your bot should start up.
 
-In the file "config.properties" you'll find spaces to add in your tokens. After that, build a jar (MAKE SURE YOU HAVE JDA IN YOUR CLASSPATH)
-Then just run the jar, more configuration options coming soon.
+# To-do
+
+-Release builds
+-Module Site
+-How to setup a bot token

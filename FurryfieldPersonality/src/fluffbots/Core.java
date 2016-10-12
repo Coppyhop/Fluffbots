@@ -1,8 +1,10 @@
 package fluffbots;
 
-import net.dv8tion.jda.entities.MessageChannel;
+import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 public abstract class Core {
 
-	public abstract void processMessage(MessageChannel channel, String message, String id);
+	public abstract void processMessage(MessageReceivedEvent event);
+	
+	public abstract String toName();
 }
