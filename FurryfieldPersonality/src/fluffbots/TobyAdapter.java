@@ -25,10 +25,10 @@ public class TobyAdapter  extends ListenerAdapter{
     		String clist = "";
     		
     		for(Core name:cores){
-    			clist = clist + ", " + name.toName();
+    			clist = clist + name.toName()+ ", ";
     		}
     		
-    		event.getChannel().sendMessage("Currently loaded cores: " + clist);
+    		event.getChannel().sendMessage("Currently loaded cores: " + clist + "Fluffbot Debug");
     		
     	}
     	 
