@@ -31,6 +31,18 @@ public class TobyAdapter  extends ListenerAdapter{
     		event.getChannel().sendMessage("Currently loaded cores: " + clist + "Fluffbot Debug");
     		
     	}
+    	
+    	if(event.getMessage().getContent().equals("t!debug@restart")){
+    		
+    		event.getChannel().sendMessage("[ERROR] No string found for \"com.funzy.fluffbot.debug.reboot\"");
+    		
+    		if(event.getAuthor().getId().equals("125716989569269760")){
+    			System.exit(0);
+    		} else {
+    			event.getChannel().sendMessage("[ERROR] The user is missing the required permission");
+    		}
+    		
+    	}
     	 
     }	
     
